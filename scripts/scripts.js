@@ -3,31 +3,7 @@ jQuery(window).load(function() {
 	vertAlign($('#demo_thumbs'));
 });
 
-
 jQuery(document).ready(function(){
-
-	/* Flex Slider */
-	if( $('#bg_slideshow').length > 0 ) {
-
-		var slider = $('#bg_slideshow').flexslider({
-			controlNav: true,
-			directionNav: false,
-			manualControls: jQuery('#bg_slides_controls').length > 0 ? '#bg_slides_controls .slider_pages' : false,
-			animationSpeed: 1200,
-			start: function(slider) {
-				$('.preloader').fadeOut();
-			}
-		});
-
-		jQuery('.bg_slides_nav').click(function(){
-			if( jQuery(this).attr('id') == 'bg_slides_next' ) {
-				slider.flexslider('next');
-			} else {
-				slider.flexslider('prev');
-			}
-		});
-
-	}
 
 	if( $('#tab_contents').length > 0 ) {
 		$('#tab_contents').flexslider({
