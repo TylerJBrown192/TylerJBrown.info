@@ -375,7 +375,7 @@ ul#bg_slides li {
 	bottom: 100%;
 	right: 0;
 	width: 668px;
-	background: rgba(0, 0, 0, .53);
+	background: rgba(0, 0, 0, .7);
 	max-width: 50%;
 	min-height: 100%;
 	-webkit-transition: all ease-in-out 1s 0s;
@@ -466,7 +466,7 @@ ul.slides:after {
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
-	background: url(../img/close_icon.png) center center no-repeat;
+	background: url(../images/close_icon.png) center center no-repeat;
 }
 
 #show_content {
@@ -536,8 +536,9 @@ ul.slides:after {
 	right: 0;
 }
 #singleimg_bg {
+	background-image: url(../images/portland.jpg);
 	background-repeat: no-repeat;
-	background-position: 0 0;
+	background-position: 50% 50%;
 	background-size: cover;
 }
 .cloud {
@@ -736,6 +737,10 @@ ul.slides:after {
 		-o-transition: all ease .4s;
 		transition: all ease .4s;
 	}
+	#header #sitename,
+	#header #tagline {
+		background: rgba(0, 0, 0, .7);
+	}
 	#countdown_block {
 		-webkit-transition: all ease .4s;
 		-moz-transition: all ease .4s;
@@ -804,6 +809,9 @@ ul.slides:after {
 }
 
 @media (max-width: 768px) {
+	#header {
+		z-index: 3;
+	}
 	#content {
 		position: relative !important;
 		overflow: hidden;
