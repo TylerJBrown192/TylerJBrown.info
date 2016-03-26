@@ -1,9 +1,4 @@
-jQuery(window).load(function() {
-	vertAlign($('#countdown_block'));
-	vertAlign($('#demo_thumbs'));
-});
-
-jQuery(document).ready(function(){
+$(document).ready(function(){
 
 	if( $('#tab_contents').length > 0 ) {
 		$('#tab_contents').flexslider({
@@ -18,13 +13,6 @@ jQuery(document).ready(function(){
 			autoHideScrollbar: false,
 			alwaysShowScrollbar: 2,
 			mouseWheel: true
-		});
-	}
-
-	if( $('#countdown').length > 0 ) {
-		$('#countdown').countdown({
-			until: new Date(SiteStartDate),
-			format: 'DHMS'
 		});
 	}
 
@@ -80,6 +68,21 @@ jQuery(document).ready(function(){
 	$('#show_content').click(function(){
 		$('#content').toggleClass('visible');
 		$('body').toggleClass('content_vis');
+
+		if (screen.height >= 700 && screen.width <= 1024) {
+			var swipeInst = document.getElementById('swipe_inst');
+
+			setTimeout(function() {
+				swipeInst.style.visibility = 'visible';
+				swipeInst.style.opacity = 1;
+			}, 2000);
+
+			setTimeout(function() {
+				swipeInst.style.visibility = 'hidden';
+				swipeInst.style.opacity = 0;
+			}, 8000);
+		}
+
 		return false;
 	});
 
@@ -89,12 +92,6 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
-	if( $('#video_bg').length > 0 ) {
-		$('#video_bg').tubular({
-			videoId: VideoBgId,
-			start: 3
-		});
-	}
 
 });
 

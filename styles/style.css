@@ -67,12 +67,6 @@ h3 {
 	margin: 0 0 15px;
 }
 
-body.demo_view h4 {
-	color: #222;
-	font-size: 18px;
-	font-weight: 400;
-}
-
 .aligncenter {
 	text-align: center;
 }
@@ -104,30 +98,6 @@ body.demo_view h4 {
 	overflow: hidden;
 	height: 500px;
 	width: 500px;
-}
-
-#demo_thumbs {
-	left: 0;
-	right: 0;
-	overflow: hidden;
-	position: absolute;
-	top: 50%;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	display: none;
-}
-
-#demo_thumbs li {
-	height: 283px;
-	margin: 0 30px;
-	list-style: none;
-	display: inline-block;
-}
-
-#demo_thumbs li a {
-	height: 259px;
-	display: block;
 }
 
 #header {
@@ -296,46 +266,6 @@ ul#bg_slides li {
 	margin-left: 0;
 }
 
-#countdown_block {
-	position: absolute;
-	left: 60px;
-	top: 50%;
-	color: #fff;
-}
-
-.countdown-row {
-	overflow: hidden;
-	display: block;
-}
-
-.countdown-section {
-	float: left;
-	display: block;
-}
-
-.countdown-section > span {
-	display: block;
-}
-
-.countdown-section + .countdown-section {
-	margin-left: 37px;
-}
-
-.countdown-section .countdown-amount {
-	font-size: 48px;
-	line-height: 56px;
-	font-weight: 700;
-	margin-bottom: 19px;
-}
-
-.countdown-section .countdown-period {
-	text-transform: uppercase;
-	font-weight: 300;
-	font-size: 12px;
-	line-height: 15px;
-	letter-spacing: 4px;
-}
-
 #mainmenu {
 	padding: 0 25px;
 	overflow: hidden;
@@ -415,6 +345,15 @@ ul#bg_slides li {
 	max-height: 100%;
 	overflow: auto;
 	padding: 39px 57px;
+}
+
+#swipe_inst {
+	visibility: hidden;
+	opacity: 0;
+	padding-top: 20px;
+	text-align: center;
+	transition-duration: 1s;
+	transition-timing-function: ease;
 }
 
 ul.slides:after {
@@ -742,21 +681,6 @@ ul.slides:after {
 	#header .header_opacity {
 		background: rgba(0, 0, 0, .7);
 	}
-	#countdown_block {
-		-webkit-transition: all ease .4s;
-		-moz-transition: all ease .4s;
-		-ms-transition: all ease .4s;
-		-o-transition: all ease .4s;
-		transition: all ease .4s;
-		left: 0;
-		right: 0;
-		margin-top: 0 !important;
-		text-align: center;
-	}
-	#countdown_block .countdown-section {
-		float: none;
-		display: inline-block;
-	}
 	#show_content {
 		-webkit-transition: all ease .4s;
 		-moz-transition: all ease .4s;
@@ -790,10 +714,6 @@ ul.slides:after {
 	}
 	.content_vis #header {
 		bottom: 228px;
-		top: auto;
-	}
-	.content_vis #countdown_block {
-		bottom: 96px;
 		top: auto;
 	}
 	.content_vis #show_content {

@@ -1,3 +1,6 @@
+/* == malihu jquery custom scrollbar plugin ==
+    Version: 3.0.5,
+    License: MIT License (MIT) */
 ! function(e, t, o) {
     ! function(t) {
         var a = "function" == typeof define && define.amd,
