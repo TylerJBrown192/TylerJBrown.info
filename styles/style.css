@@ -474,7 +474,7 @@ ul.slides:after {
 	width: 73px;
 	top: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, .53);
+	background: rgba(0, 0, 0, .7);
 	display: block;
 	right: 0;
 	position: absolute;
@@ -725,7 +725,7 @@ ul.slides:after {
 
 @media (max-width: 1024px) {
 	#header {
-		bottom: 60%;
+		bottom: 50%;
 		top: auto;
 		left: 0;
 		right: 0;
@@ -737,8 +737,7 @@ ul.slides:after {
 		-o-transition: all ease .4s;
 		transition: all ease .4s;
 	}
-	#header #sitename,
-	#header #tagline {
+	#header .header_opacity {
 		background: rgba(0, 0, 0, .7);
 	}
 	#countdown_block {
@@ -809,8 +808,8 @@ ul.slides:after {
 }
 
 @media (max-width: 768px) {
-	#header {
-		z-index: 3;
+	#show_content > span {
+		left: 47%;
 	}
 	#content {
 		position: relative !important;
