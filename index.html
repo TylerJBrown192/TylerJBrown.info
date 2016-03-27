@@ -15,7 +15,7 @@
 
 <body>
 	<header id="header">
-        <div class="header_opacity">
+        <div id="header_opacity">
             <h1 id="sitename">Tyler J Brown</h1>
             <h4 id="tagline">Software Developer</h4>
         </div>
@@ -30,8 +30,8 @@
 			<div id="content_inner">
 				<ul id="mainmenu">
 					<li><a href="#">About</a></li>
-					<li><a href="#">Interests</a></li>
 					<li><a href="#">Projects</a></li>
+					<li><a href="#">Interests</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
 				<div id="tab_contents">
@@ -40,16 +40,23 @@
 						<li class="content_tab_item" id="about">
 							<div class="content_tab_inner">
 								<h2>About</h2>
-								<p><img src="http://placehold.it/488x169" alt=""></p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-								<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="#">Excepteur sint occaecat</a> cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+								<div>
+								    <img class="face_img" src="images/face.jpg" alt="My gorgeous mug">
+								</div>
+
+								<p></p>
+
+								<p><a href="#">Excepteur sint occaecat</a></p>
+
+								<p>If you'd like a more professional introduction, I'd love to connect with you on <a href="https://www.linkedin.com/in/tylerjbrown192">LinkedIn</a>!</p>
+
+                                <p>Thanks for checking out my website.</p>
 							</div>
 						</li>
 
-						<li class="content_tab_item" id="services">
+						<li class="content_tab_item" id="projects">
 							<div class="content_tab_inner">
-								<h2>Interests</h2>
+								<h2>Projects</h2>
 								<div class="columns">
 									<div class="column1_3 aligncenter">
 										<img src="http://placehold.it/72x69" alt="">
@@ -72,44 +79,27 @@
 							</div>
 						</li>
 
-						<li class="content_tab_item" id="subscribe">
+						<li class="content_tab_item" id="interests">
 							<div class="content_tab_inner">
-								<h2>Projects</h2>
+								<h2>Interests</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-								<form action="#" id="subscribe_form">
-									<div class="form_inner">
-										<div class="input_wrap"><input type="email" class='form_item' name="subscribe_email" id="subscribe_email" placeholder="Enter your email"></div>
-										<a href="#" class="form_submit">Submit</a>
-									</div>
-									<div id="form_results"></div>
-								</form>
 							</div>
 						</li>
 
-						<li class="content_tab_item" id="contacts">
+						<li class="content_tab_item" id="contact">
 							<div class="content_tab_inner">
 								<h2>Contact</h2>
 
-								<ul id="contacts_list">
-									<li><i class="icon-home"></i>378 Main Street London England</li>
-									<li><i class="icon-mail-alt"></i>info@sunloverstheme.com</li>
-									<li><i class="icon-phone"></i>+1 (44) 123-45-67</li>
+								<ul id="contact_list">
+                                    <li>LinkedIn</li>
+                                    <li>GitHub</li>
+                                    <li>Email</li>
+                                    <li>Twitter?</li>
 								</ul>
+
 								<h3>Get In Touch</h3>
-								<form action="#" id="contacts_form">
-									<div class="form_row">
-										<input class="form_item" type="text" name="name" placeholder="Name" id="name">
-									</div>
-									<div class="form_row">
-										<input class="form_item" type="email" name="email" placeholder="E-mail" id="email">
-									</div>
-									<div class="form_row row_last">
-										<textarea class="form_item" placeholder="Message" name="message" id="message"></textarea>
-										<a href="#" class="form_submit">Submit</a>
-									</div>
-									<div id="contact_results"></div>
-								</form>
+
 							</div>
 						</li>
 
@@ -125,7 +115,7 @@
 
     <div id="singleimg_bg"></div>
 
-    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js" integrity="sha256-oYqpLeqZe9cetUDV+TFiBZHp3uJ+X4F5eLs4W6uSTSE=" crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript" src="scripts/jquery-2.2.0.js"></script>
     <script language="javascript" type="text/javascript" src="scripts/flexslider.js"></script>
     <script language="javascript" type="text/javascript" src="scripts/mCustomScrollbar.js"></script>
     <script language="javascript" type="text/javascript" src="scripts/scripts.js"></script>
