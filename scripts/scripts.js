@@ -16,10 +16,12 @@ $(document).ready(function(){
 		});
 	}
 
-	$('#show_content').click(function(){
-		$('#content').toggleClass('visible');
-		$('body').toggleClass('content_vis');
+	$('#show_content, #header').click(function(){
+		$('#content').addClass('visible');
+		$('body').addClass('content_vis');
 
+		//TODO: Change these into classes instead of injecting inline styles
+		document.getElementById('header').style.zIndex = 2;
 		document.getElementById('header_opacity').style.background = 'none';
 
 		if (screen.height >= 800 && screen.width <= 1024) {
@@ -42,6 +44,8 @@ $(document).ready(function(){
 	$('.close_content').click(function() {
 		$('#content').removeClass('visible');
 		$('body').removeClass('content_vis');
+
+		document.getElementById('header').style.zIndex = 3;
 
 		if (screen.width < 1024) {
 			document.getElementById('header_opacity').style.background = 'rgba(0,0,0,.7)';

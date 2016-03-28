@@ -105,7 +105,7 @@ h3 {
 	left: 0;
 	top: 0;
 	padding: 41px 0 0 50px;
-	z-index: 2;
+	z-index: 3;
 }
 
 #sitename {
@@ -272,7 +272,8 @@ ul.slides:after {
 .content_tab_item .content_tab_inner {
 	padding: 0 25px;
 	max-height: 100%;
-	overflow: auto;
+	/*overflow: auto;*/
+	/*TODO: Check all devices to see if this breaks anything*/
 }
 
 #content .close_content {
@@ -368,6 +369,13 @@ ul.slides:after {
 }
 #projects .columns h3 {
 	padding-top: 25px;
+}
+
+#interests ul {
+	list-style: none;
+}
+#interests li {
+	padding-bottom: 4px;
 }
 
 #contact_list {
