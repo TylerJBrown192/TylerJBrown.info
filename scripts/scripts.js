@@ -16,11 +16,11 @@ $(document).ready(function(){
 		});
 	}
 
+
 	$('#show_content, #header').click(function(){
 		$('#content').addClass('visible');
 		$('body').addClass('content_vis');
 
-		//TODO: Change these into classes instead of injecting inline styles
 		document.getElementById('header').style.zIndex = 2;
 		document.getElementById('header_opacity').style.background = 'none';
 
@@ -53,9 +53,43 @@ $(document).ready(function(){
 
 		return false;
 	});
-
-
 });
+
+
+// var market = $("#market img"),
+// 	setList = $("#set_list img"),
+// 	noodle = $("#noodle img");
+//
+// function imageCycle(imgArray) {
+// 	imgArray.forEach(function(image) {
+// 		var oldIndex = null,
+// 			index = imgArray.indexOf(image);
+//
+// 		if (index === imgArray.length - 1) {
+// 			oldIndex = imgArray[0];
+// 		} else if (index === 0) {
+// 			oldIndex = imgArray[imgArray.length - 1];
+// 		} else {
+// 			oldIndex = imgArray[index - 1];
+// 		}
+//
+// 		oldImage.style.visibility = 'hidden';
+// 		oldImage.style.visibility = 0;
+//
+// 		image.style.visibility = 'visible';
+// 		image.style.opacity = 1;
+// 	});
+// };
+//
+// setInterval(function() {
+// 	imageCycle(market);
+// }, 2000); //different than other timeout because of array.length
+//
+// setInterval(function() {
+// 	imageCycle(setList);
+// 	imageCycle(noodle);
+// }, 3000);
+
 
 /* Vertical Alignment */
 function vertAlign(elem) {

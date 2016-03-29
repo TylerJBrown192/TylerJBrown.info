@@ -369,6 +369,19 @@ ul.slides:after {
 }
 #projects .columns h3 {
 	padding-top: 25px;
+	color: #e4e38d;
+}
+#projects img {
+	height: 68px;
+	width: 68px;
+}
+#projects div img:first-child {
+	visibility: visible;
+	opacity: 1;
+}
+#projects div img:not(:first-child) {
+	visibility: hidden;
+	opacity: 0;
 }
 
 #interests ul {
@@ -379,7 +392,7 @@ ul.slides:after {
 }
 
 #contact_list {
-	margin-bottom: 45px;
+	margin-bottom: 25px;
 	font-family: 'PT Sans Narrow', sans-serif;
 }
 #contact_list li {
