@@ -55,7 +55,7 @@ $(document).ready(function(){
 	});
 });
 
-
+//TODO: Creating image fade cycling for Projects columns. I won't implement a carousel, damn it!
 var market  	= $('#market   img'),
 	setList 	= $('#set_list img'),
 	noodle  	= $('#noodle   img'),
@@ -64,18 +64,23 @@ var market  	= $('#market   img'),
 	arrayStore;
 
 function imageCycle(imgArray) {
-	var	oldIndex 	= imgArray[indexStore];
-	var newIndexIndex = $(imgArray).index(oldIndex);
-	var	newIndex	= imgArray[newIndexIndex + 3];	//increase newIndex to the maximum length of the longest array in set, assuming [firstArray].length is shorter. If not, then longestArray.length + 1
-	var newIndexRefresh = $(imgArray).index(newIndex);
-	var	indexBack 	= index[newIndexRefresh - 1];
-	var	indexForw	= index[newIndexRefresh + 1];
+	var	oldIndex 		= imgArray[indexStore];
+		newIndexIndex 	= $(imgArray).index(oldIndex),
+		newIndex		= imgArray[newIndexIndex + 3],
+		//newIndex should never go over array.length limit because of final if / else check at end of fucntion
+		//increase newIndex to the maximum length of the longest array in set, assuming [firstArray].length is shorter. If not, then longestArray.length + 1
+		newIndexRefresh = $(imgArray).index(newIndex),
+		indexBack 		= index[newIndexRefresh - 1],
+		indexForw		= index[newIndexRefresh + 1],
+		tempVar;
 
-	if (indexBack == undefined && (($(imgArray).index(oldIndex) + 3) >= (imgArray.length + 1))) {
-
-		indexBack = newIndex[imgArray.length - 1];
+	if ((indexBack == undefined) && (($(imgArray).index(oldIndex) + 3) >= (imgArray.length))) {
+		tempVar = ((imgArray.length - 1) - $(imgArray).index(newIndex) + 3);
+		//begrudgingly have to create a tempVar variable because array[indexes] can handle simple math but not function calls
+		indexBack = index[tempVar];
 	}
 
+	//TODO: Mirror above if statement functionality
 	if (indexForw >= imgArray.length) {
 		indexForw = newIndex[0];
 	}
@@ -101,8 +106,8 @@ function imageCycle(imgArray) {
 	$(newIndex).css('visibility', 'visible');
 	$(newIndex).css('opacity', 1);
 
-	if (indexStore >= imgArray.length) {
-		indexStore = imgArray.length - indexStore;
+	if (indexStore + 3 >= imgArray.length) {
+		indexStore = ((imgArray.length - 1) - (indexStore + 3));
 	} else {
 		indexStore += 3;
 	}
@@ -111,78 +116,6 @@ function imageCycle(imgArray) {
 setInterval(function() {
 	imageCycle(projectImg);
 }, 500);
-
-
-// function imageCycle() {
-// 	var total = $('#market img').length;
-//
-// 	$('#market img').css('z-index', 1);
-//
-// 	$('#market img:nth-child(' + counter + ')').css({
-// 		'opacity': 0,
-// 		'display': 'block',
-// 		'z-index': 2
-// 	});
-//
-// 	$('#market img:nth-child(' + counter + ')').animate({
-// 		'opacity': 1
-// 	}, 1000);
-//
-// 	counter++;
-// 	if (counter > total) { counter = 1 }
-// };
-
-
-// setInterval(function() {
-// 	imageCycle(setList);
-// 	imageCycle(noodle);
-// }, 8000);
-
-// function imageCycle(imgArray) {
-// 	imgArray.each(function(index, image) {
-// 		var oldIndex = null;
-//
-// 		if (index === (imgArray.length - 1)) {
-// 			oldIndex = imgArray[0];
-// 		} else if (index === 0) {
-// 			oldIndex = imgArray[imgArray.length - 1];
-// 		} else {
-// 			oldIndex = imgArray[index - 1];
-// 		}
-//
-// 		// setTimeout(function() {
-// 			oldIndex = $(oldIndex).css("visibility", "hidden");
-// 			oldIndex = $(oldIndex).css("opacity", 0);
-// 		// }, 1000);
-//
-// 		setTimeout(function() {
-// 			image = $(image).css("visibility", "visible");
-// 			image = $(image).css("opacity", 1);
-// 		})
-// 	});
-// };
-
-
-// function imageCycle(imgArray) {
-// 	imgArray.forEach(function(image) {
-// 		var oldIndex = null,
-// 			index = imgArray.indexOf(image);
-//
-// 		if (index === imgArray.length - 1) {
-// 			oldIndex = imgArray[0];
-// 		} else if (index === 0) {
-// 			oldIndex = imgArray[imgArray.length - 1];
-// 		} else {
-// 			oldIndex = imgArray[index - 1];
-// 		}
-//
-// 		oldIndex.style.visibility = 'hidden';
-// 		oldIndex.style.visibility = 0;
-//
-// 		image.style.visibility = 'visible';
-// 		image.style.opacity = 1;
-// 	});
-// };
 
 
 /* Vertical Alignment */
