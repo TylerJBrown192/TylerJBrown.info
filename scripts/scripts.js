@@ -61,3 +61,22 @@ function vertAlign(elem) {
         }).fadeIn();
     }
 }
+
+function clipBoard() {
+    // Insert ghost element to document.body, copy static string to clipboard, then remove element. Intuitive, right? /s
+    var textArea = document.createElement('textarea');
+    textArea.value = 'tylerjbrown192@gmail.com';
+    textArea.style.hidden = 'true';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+    } catch(err) {
+        console.log('Apparently Safari is stuck in the old ages.');
+        console.log(err);
+        alert('Your browser doesn\'t support this :(')
+    } finally {
+        document.body.removeChild(textArea);
+    }
+}
